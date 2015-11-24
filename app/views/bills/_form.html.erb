@@ -1,0 +1,39 @@
+<%= form_for(@bill) do |f| %>
+  <% if @bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% @bill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table align="center"><tr align="right">
+  <div class="field">
+    <td align="right"><h4> <%= f.label :bill_id %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :bill_id, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bill ID"%></td>
+  </div></tr>
+  <tr><td><br></td></tr>
+
+ <tr align="right">
+  <div class="field">
+    <td align="right"><label><h4><%= f.label :amount_paid %></h4></label></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :amount_paid, size: "70x15", class: "form-control input-lg", placeholder: "Enter Amount Paid"%></td>
+  </div></tr>
+<tr><td><br></td></tr>
+  <tr align="right">
+  <div class="field">
+   <td align="right"> <h4><%= f.label :remained_amount %></h4></td>
+   <td align="right" style="padding-left:30px"> <%= f.text_field :remained_amount, size: "70x15", class: "form-control input-lg", placeholder: "Amount To Be Paid"%></td>
+  </div></tr>
+  <tr><td><br></td></tr>
+
+
+  </table>
+  <div class="actions" align="center">
+    <input class="btn btn-inverse my-btn" type="submit" value="Update Bill"></input>
+  </div>
+<% end %>

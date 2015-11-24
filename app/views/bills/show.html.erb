@@ -1,0 +1,33 @@
+<h1 align="center">Billing Information</h1>
+<hr></hr>
+ <div class="well">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bill:</strong>
+  <%= @bill.bill_id %>
+</p>
+
+<p>
+  <strong>Amount paid:</strong>
+  <%= @bill.amount_paid %>
+</p>
+
+<p>
+  <strong>Remained amount:</strong>
+  <%= @bill.remained_amount %>
+</p>
+
+<p>
+  <strong>Remained time:</strong>
+  <%= @bill.remained_time %>
+</p>
+
+<ul class="pager">
+<li><%= link_to 'Edit', edit_bill_path(@bill) %> </li>
+<li><%= link_to 'Back', bills_path %></li>
+
+</ul>
+</div>
+
+
