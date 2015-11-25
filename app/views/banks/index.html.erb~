@@ -6,7 +6,6 @@
 </td></tr></table>
 
 <table id="loan_table" class="display responsive no-wrap">
-
   <thead>
     <tr>
     <th>Bank ID</th>
