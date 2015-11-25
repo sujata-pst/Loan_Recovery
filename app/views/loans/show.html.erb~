@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
 <p>
-  <strong>Loan amount:</strong>
-  <%= @loan.loan_amount %>
-</p>
-
-<p>
-  <strong>Amount paid:</strong>
-  <%= @loan.amount_paid %>
+  <strong>Loan:</strong>
+  <%= @loan.id%>
 </p>
 
 <p>

@@ -1,38 +1,40 @@
 <%= form_for(@loan) do |f| %>
-  <% if @loan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+ <% if @loan.errors.any? %>
+  <div id="error_explanation">
+   <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+    <ul>
+     <% @loan.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+     <% end %>
+    </ul>
+  </div>
+ <% end %>
 
-      <ul>
-      <% @loan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<table align="center"><tr align="right">
-  <div class="field">
+ <table align="center">
+  <tr align="right">
+   <div class="field">
     <td align="right"><h4><%= f.label :loanname %></h4></td>
     <td align="right" style="padding-left:30px"><%= f.text_field :loanname, size: "70x10", class: "form-control input-lg", placeholder: "Enter Loan Name"%></td>
-  </div></tr>
+   </div>
+  </tr>
   <tr><td><br></td></tr> 
- <tr align="right">
-  <div class="field">
+  <tr align="right">
+   <div class="field">
     <td align="right"><label><h4> <%= f.label :loan_type %></h4></label></td>
     <td align="right" style="padding-left:30px"><%= f.text_field :loan_type , size: "70x15", class: "form-control input-lg", placeholder: "Loan Type"%></td>
-  </div></tr>
+   </div>
+  </tr>
   <tr><td><br></td></tr>
- 
-<tr align="right">
-  <div class="field">
-   <td align="right"> <h4> <%= f.label :interest_rate %></h4></td>
-   <td align="right" style="padding-left:30px"> <%= f.text_field  :interest_rate, size: "70x15", class: "form-control input-lg", placeholder: " Interest Rate"%></td>
-  </div></tr>
+  <tr align="right">
+   <div class="field">
+    <td align="right"> <h4> <%= f.label :interest_rate %></h4></td>
+    <td align="right" style="padding-left:30px"> <%= f.text_field  :interest_rate, size: "70x15", class: "form-control input-lg", placeholder: " Interest Rate"%></td>
+   </div>
+  </tr>
   <tr><td><br></td></tr>
  </table>
-<br><br>
-  <div class="actions" align="center">
-    <input class="btn btn-inverse my-btn" type="submit" value="Update Loan"></input>
-  </div>
+ <br><br>
+ <div class="actions" align="center">
+  <input class="btn btn-inverse my-btn" type="submit" value="Update Loan"></input>
+ </div>
 <% end %>

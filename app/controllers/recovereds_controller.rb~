@@ -23,8 +23,7 @@ class RecoveredsController < ApplicationController
   def create
     @recovered = Recovered.new(recovered_params)
     @recovered.save
-    redirect_to action: "index"
-    #respond_with(@recovered)
+    respond_with(@recovered)
   end
 
   def update

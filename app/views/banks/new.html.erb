@@ -1,5 +1,57 @@
-<h1 align="center">Add New bank</h1>
-<%= render 'form' %>
+<h1 align="center">New Bank</h1>
+<hr></hr>
+<%= form_for(@bank) do |f| %>
+ <% if @bank.errors.any? %>
+  <div id="error_explanation">
+   <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this rule from being saved:</h2>
+   <ul>
+    <% @bank.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+   </ul>
+  </div>
+ <% end %>
+ <table align="center">
+  <tr align="right">
+   <div class="field">
+    <td align="right"><h4><%= f.label :name %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :name, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bank Name"%></td>
+   </div>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr align="right">
+   <div class="field">
+    <td align="right"><h4><%= f.label :address %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :address, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bank Address"%></td>
+   </div>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr align="right">
+   <div class="field">
+    <td align="right"><h4><%= f.label :contact_number %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :contact_number, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bank Contact no."%></td>
+   </div>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr align="right">
+   <div class="field">
+    <td align="right"><h4><%= f.label :branch %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :branch, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bank Branch"%></td>
+   </div>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr align="right">
+   <div class="field">
+    <td align="right"><h4><%= f.label :email %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :email, size: "70x10", class: "form-control input-lg", placeholder: "Enter Bank Email-id"%></td>
+   </div>
+  </tr>
+  <tr><td><br></td></tr>
+ </table>
+ <div class="actions" align="center">
+  <input class="btn btn-inverser my-btn" type="submit" value="Create Bank"></input>
+ </div>
+<% end %>
 <ul class="pager">
-<li><%= link_to 'Back', banks_path %></li>
+ <li><%= link_to 'Back', rules_path %></li>
 </ul>

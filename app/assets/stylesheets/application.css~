@@ -91,7 +91,7 @@
 .left-addon input  { padding-left:  30px; }
 
 .s{
-	margin-top: 10px;
+    margin-top: 10px;
     font-weight: 700;
     color: antiquewhite;
 }

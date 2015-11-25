@@ -20,7 +20,7 @@
 	<% @loans=Loan.all %>
     <% @loans.each do |loan| %>
       <tr>
-	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.bankname %></td>
+	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.bank.name if loan.bank %></td>
         <td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.id %></td>
 	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.loanname %></td>
         <td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.loan_type %></td>

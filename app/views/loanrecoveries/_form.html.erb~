@@ -1,6 +1,5 @@
 <%= form_for(@loanrecovery) do |f| %>
-<div class="mt">  
-<% if @loanrecovery.errors.any? %>
+  <% if @loanrecovery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@loanrecovery.errors.count, "error") %> prohibited this loanrecovery from being saved:</h2>
 
@@ -11,8 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-      <%= f.fields_for :bills do |p| %>
 <table align="center"><tr align="right">
   <div class="field">
     <td align="right"><h4><%= f.label :name %></h4></td>
@@ -42,29 +39,19 @@
    <td align="right"> <h4><%= f.label :status %></h4></td>
    <td align="right" style="padding-left:30px"> <%= f.text_field :status, size: "70x15", class: "form-control input-lg", placeholder: "Status"%></td>
   </div></tr>
-    <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-   <td align="right"> <h4><%= p.label :totalamount %></h4></td>
-    <td align="right" style="padding-left:30px"> <%= p.text_field :totalamount, size: "70x15", class: "form-control input-lg", placeholder: "Enter Total Amount"%></td>
+  <tr><td><br></td></tr>
+  <tr  align="right">
+  <div class="field" >
+  <td align="right"><h4><%= f.label :bankname %></h4></td>
+  <td align="left" style="padding-left:30px"><%= f.select:bankname,Bank.all.collect { |p| ["#{p.name},#{p.branch}"] }, {
+:include_blank => 'None' } %></td>
   </div></tr>
-   <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-   <td align="right"> <h4><%= p.label :amount_paid %></h4></td>
-    <td align="right" style="padding-left:30px"> <%= p.text_field :amount_paid, size: "70x15", class: "form-control input-lg", placeholder: "Enter The Paid Amount"%></td>
-  </div></tr>
-    <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-   <td align="right"> <h4><%= p.label :remained_amount %></h4></td>
-    <td align="right" style="padding-left:30px"> <%= p.text_field :remained_amount, size: "70x15", class: "form-control input-lg", placeholder: "Enter The Remained Amount"%></td>
-  </div></tr>
-    <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-   <td align="right"> <h4><%= p.label :dateofpayment %></h4></td>
-    <td align="left" style="padding-left:30px"> <%= p.date_select :dateofpayment%></td>
+ <tr><td><br></td></tr>
+  <tr  align="right">
+  <div class="field" >
+  <td align="right"><h4><%= f.label :loanname %></h4></td>
+  <td align="left" style="padding-left:30px"><%= f.select:loanname,Loan.all.collect { |p| ["#{p.loanname}"] }, {
+:include_blank => 'None' } %></td>
   </div></tr>
   </table>
 
@@ -73,8 +60,4 @@
     <input class="btn btn-inverse my-btn" type="submit" value="Update Defaulter"></input>
   </div>
 <% end %>
-<% end %>
 
-
-<!-- </body>
-</html> -->

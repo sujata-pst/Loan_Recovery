@@ -11,24 +11,28 @@
     </div>
   <% end %>
 
+<table align="center"><tr align="right">
   <div class="field">
-    <%= f.label :bankname %><br>
-    <%= f.select:bankname,Bank.all.collect { |p| ["#{p.name},#{p.branch}"] }, {
-:include_blank => 'None' } %>
-  </div>
+    <td align="right"><h4><%= f.label :loanname %></h4></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :loanname, size: "70x10", class: "form-control input-lg", placeholder: "Enter Loan Name"%></td>
+  </div></tr>
+  <tr><td><br></td></tr> 
+ <tr align="right">
   <div class="field">
-    <%= f.label :loanname %><br>
-    <%= f.text_field :loanname %>
-  </div>
+    <td align="right"><label><h4> <%= f.label :loan_type %></h4></label></td>
+    <td align="right" style="padding-left:30px"><%= f.text_field :loan_type , size: "70x15", class: "form-control input-lg", placeholder: "Loan Type"%></td>
+  </div></tr>
+  <tr><td><br></td></tr>
+ 
+<tr align="right">
   <div class="field">
-    <%= f.label :loan_type %><br>
-    <%= f.text_field :loan_type %>
-  </div>
-  <div class="field">
-    <%= f.label :interest_rate %><br>
-    <%= f.number_field :interest_rate %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+   <td align="right"> <h4> <%= f.label :interest_rate %></h4></td>
+   <td align="right" style="padding-left:30px"> <%= f.text_field  :interest_rate, size: "70x15", class: "form-control input-lg", placeholder: " Interest Rate"%></td>
+  </div></tr>
+  <tr><td><br></td></tr>
+ </table>
+<br><br>
+  <div class="actions" align="center">
+    <input class="btn btn-inverse my-btn" type="submit" value="Update Loan"></input>
   </div>
 <% end %>

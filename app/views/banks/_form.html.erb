@@ -1,54 +1,53 @@
 <%= form_for(@bank) do |f| %>
-  <% if @bank.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
-
-      <ul>
-      <% @bank.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<table align="center">
-  <tr align="right">
-  <div class="field">
-    <td align="right"><h4><%= f.label :name %></h4></td>
-    <td align="right" style="padding-left:30px"><%= f.text_field :name, size: "70x10", class: "form-control input-lg", placeholder: "Enter Defaulter Name"%></td>
-  </div>
-  </tr>
-  <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-    <td align="right"><h4><%= f.label :address %></h4></td>
-    <td align="right" style="padding-left:30px"><%= f.text_field :address, size: "70x10", class: "form-control input-lg", placeholder: "Enter Defaulter Name"%></td>
-  </div>
-  </tr>
-  <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-    <td align="right"><h4><%= f.label :contact_number %></h4></td>
-    <td align="right" style="padding-left:30px"><%= f.text_field :contact_number, size: "70x10", class: "form-control input-lg", placeholder: "Enter Defaulter Name"%></td>
-  </div>
-  </tr>
-  <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-    <td align="right"><h4><%= f.label :branch %></h4></td>
-    <td align="right" style="padding-left:30px"><%= f.text_field :branch, size: "70x10", class: "form-control input-lg", placeholder: "Enter Defaulter Name"%></td>
-  </div>
-  </tr>
-  <tr><td><br></td></tr>
-  <tr align="right">
-  <div class="field">
-    <td align="right"><h4><%= f.label :email %></h4></td>
-    <td align="right" style="padding-left:30px"><%= f.text_field :email, size: "70x10", class: "form-control input-lg", placeholder: "Enter Defaulter Name"%></td>
-  </div>
-  </tr>
-  <tr><td><br></td></tr>
-</table>
-<br><br>
-   <div class="actions" align="center">
-    <input class="btn btn-inverse my-btn" type="submit" value="Update Defaulter"></input>
-  </div>
+	<% if @bank.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+	      <ul>
+		      <% @bank.errors.full_messages.each do |message| %>
+		      <li><%= message %></li>
+		      <% end %>
+	      </ul>
+	    </div>
+	<% end %>
+  	<table align="center">
+  		<tr align="right">
+			<div class="field">
+				<td align="right"><h4><%= f.label :name %></h4></td>
+			  	<td align="right" style="padding-left:30px"><%= f.text_field :name, size: "70x10", class: "form-control input-lg"%></td>
+			</div>
+	  	</tr>
+	  	<tr><td><br></td></tr>
+	  	<tr align="right">
+	  		<div class="field">
+	    		<td align="right"><h4><%= f.label :address %></h4></td>
+	    		<td align="right" style="padding-left:30px"><%= f.text_field :address, size: "70x10", class: "form-control input-lg"%></td>
+	  		</div>
+	  	</tr>
+	  	<tr><td><br></td></tr>
+	  	<tr align="right">
+	  		<div class="field">
+	   	 	<td align="right"><h4><%= f.label :contact_number %></h4></td>
+	    	<td align="right" style="padding-left:30px"><%= f.text_field :contact_number, size: "70x10", class: "form-control input-lg"%></td>
+	  		</div>
+	  	</tr>
+	  	<tr><td><br></td></tr>
+	  	<tr align="right">
+	  		<div class="field">
+	    	<td align="right"><h4><%= f.label :branch %></h4></td>
+	    	<td align="right" style="padding-left:30px"><%= f.text_field :branch, size: "70x10", class: "form-control input-lg"%></td>
+	  		</div>
+	  	</tr>
+	  	<tr><td><br></td></tr>
+	  	<tr align="right">
+	  		<div class="field">
+	    	<td align="right"><h4><%= f.label :email %></h4></td>
+	    	<td align="right" style="padding-left:30px"><%= f.text_field :email, size: "70x10", class: "form-control input-lg"%></td>
+	  		</div>
+	  	</tr>
+	  	<tr><td><br></td></tr>
+	</table>
+	<br><br>
+	<div class="actions" align="center">
+    <input class="btn btn-inverse my-btn" type="submit" value="Update Bank"></input>
+  	</div>
 <% end %>

@@ -9,7 +9,7 @@ class Loanrecovery < ActiveRecord::Base
 
 validates :phone, :length => { :is => 10 }
 validates_format_of :email, :with =>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i   
-validates :name,:phone,:address,:status, presence: true, allow_blank: false
+validates :name,:phone,:address,:status,:bankname,:loanname, presence: true, allow_blank: false
 
 
 def self.import(file)

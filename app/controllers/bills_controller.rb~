@@ -23,8 +23,8 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(bill_params)
     @bill.save
-    # redirect_to action: "index"
-    respond_with(@bill)
+     redirect_to action: "index"
+    #respond_with(@bill)
   end
 
   def update
