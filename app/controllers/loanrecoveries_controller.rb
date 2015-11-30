@@ -9,8 +9,8 @@ end
   # GET /loanrecoveries.json
   def index
    @loanrecoveries = Loanrecovery.all
-           #@loanrecoveries = Loanrecovery.where("bank_id= ?", params[:banks])
-        #@loanrecoveries = Loanrecovery.joins(:banks).where("banks.id = 1")
+   #@loanrecoveries = Loanrecovery.where("bank_id= ?", params[:banks])
+   #@loanrecoveries = Loanrecovery.joins(:banks).where("banks.id = 1")
 
 
   end
