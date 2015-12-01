@@ -1,0 +1,4 @@
+class Bill < ActiveRecord::Base
+belongs_to :loanrecovery
+validates :id,:amount_paid,:remained_amount, presence: true, allow_blank: false
+end

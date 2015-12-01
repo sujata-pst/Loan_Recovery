@@ -23,7 +23,8 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new(loan_params)
     @loan.save
-    respond_with(@loan)
+    redirect_to action: "index"
+    #respond_with(@loan)
   end
 
   def update
@@ -42,6 +43,6 @@ class LoansController < ApplicationController
     end
 
     def loan_params
-      params.require(:loan).permit(:loan_id, :loan_amount, :amount_paid, :loan_type, :interest_rate, :loanname)
+      params.require(:loan).permit(:loan_id, :loan_amount, :amount_paid, :loan_type, :interest_rate, :loanname,:bankname)
     end
 end

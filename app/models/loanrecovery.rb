@@ -1,15 +1,12 @@
 require 'roo'
 class Loanrecovery < ActiveRecord::Base
-	belongs_to :bank 
-	has_many :bill
-	has_one :recovered
-	belongs_to :loan
-	BANKS = %w[]
-	LOANS = %w[]
-
-validates :phone, :length => { :is => 10 }
-validates_format_of :email, :with =>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i   
-validates :name,:phone,:address,:status,:bankname,:loanname, presence: true, allow_blank: false
+  belongs_to :bank 
+  has_many :bill
+  has_one :recovered
+  belongs_to :loan
+  validates :phone, :length => { :is => 10 }
+  validates_format_of :email, :with =>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i   
+  validates :name,:phone,:address,:status,:bankname,:loanname, presence: true, allow_blank: false
 
 
 def self.import(file)
@@ -17,10 +14,10 @@ def self.import(file)
   spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)
   (2..spreadsheet.last_row).each do |i|
-    row = Hash[[header, spreadsheet.row(i)].transpose]
-    product = find_by_id(row["id"]) || new
-    product.attributes = row.to_hash.select { |k,v| allowed_attributes.include? k }
-    product.save!
+  row = Hash[[header, spreadsheet.row(i)].transpose]
+  product = find_by_id(row["id"]) || new
+  product.attributes = row.to_hash.select { |k,v| allowed_attributes.include? k }
+  product.save!
   end
 end
 

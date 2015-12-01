@@ -23,6 +23,7 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new(loan_params)
     @loan.save
+    #redirect_to action: "index"
     respond_with(@loan)
   end
 
