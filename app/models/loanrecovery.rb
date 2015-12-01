@@ -4,9 +4,6 @@ class Loanrecovery < ActiveRecord::Base
   has_many :bill
   has_one :recovered
   belongs_to :loan
-  BANKS = %w[]
-  LOANS = %w[]
-
   validates :phone, :length => { :is => 10 }
   validates_format_of :email, :with =>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i   
   validates :name,:phone,:address,:status,:bankname,:loanname, presence: true, allow_blank: false
