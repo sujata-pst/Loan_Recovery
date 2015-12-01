@@ -1,6 +1,6 @@
 <table width="100%">
 <tr>
-<td><h1>Loan Information</h1></td>
+<td><h1>Loans Information</h1></td>
 <td align="right">
 <a href="/loans/new" class="btn btn-inverse my-btn" role="button"><i class="fa fa-plus fa-lg my-btn"></i>&nbsp&nbsp<label class="my-btn">Create Loan</label></a>
 </td></tr></table>
@@ -20,7 +20,7 @@
 	<% @loans=Loan.all %>
     <% @loans.each do |loan| %>
       <tr>
-	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.bankname %></td>
+	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.bankname%></td>
         <td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.id %></td>
 	<td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.loanname %></td>
         <td  data-link="<%= edit_loan_path(loan) %>", style="cursor:pointer" ><%= loan.loan_type %></td>
