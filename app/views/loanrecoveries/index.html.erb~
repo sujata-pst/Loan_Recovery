@@ -1,4 +1,4 @@
-
+<div class="mt">
 <table width="100%">
 <tr>
  <td><h1>Defaulters Information</h1></td>
@@ -9,7 +9,7 @@
   <td align="right"><%= submit_tag "Import" %>
 <% end %></td> -->
 
-<td align="right"><label class="btn btn-inverse btn-file my-btn" action="/loanrecoveries/import" enctype="multipart/form-data" method="post"><div><input name="utf8" class="my-btn" type="hidden" value="&#x2713;" /><input name="authenticity_token" class="mybtn" type="hidden" value="AX0Jj45X2Ob6LvVvq+fUpm12c+f/2B3hT/B6pqK0LWA=" /></div><span class="glyphicon glyphicon-folder-open"></span>&nbsp&nbsp<label class="my-btn">Import Defaulters List<input type="file" class="my-btn"></label></label>
+<td align="right"><label class="btn btn-inverse btn-file my-btn"><div><input name="utf8" class="my-btn" type="hidden" value="&#x2713;" /><input name="authenticity_token" class="mybtn" type="hidden" value="AX0Jj45X2Ob6LvVvq+fUpm12c+f/2B3hT/B6pqK0LWA=" /></div><span class="glyphicon glyphicon-folder-open"></span>&nbsp&nbsp<label class="my-btn"><a href="#" class="popup-link-1"><label class="my-btn">Import Defaulters List</label></a></label></label>
 
 <a href="/loanrecoveries/new" class="btn btn-inverse my-btn" role="button"><i class="fa fa-plus fa-lg my-btn"></i>&nbsp&nbsp<label class="my-btn">Create Defaulter</label></a></td></tr></table>
 
@@ -52,6 +52,28 @@
   </tbody>
 </table>
 <br>
+</div>
+
+<div class="popup-box" id="popup-box-1">
+    <div class="close">X</div>
+    <div class="top">
+        <h2>Import File....</h2>
+    </div>
+    <div class="bottom">
+        
+
+
+<%= form_tag import_loanrecoveries_path, class: 'btn btn-inverse', multipart: true do %>
+  <%= file_field_tag :file %>
+  <div align="center">
+  <button type="submit" class="btn btn-inverse">Import</button></div>
+<% end %>
+
+
+    </div>
+</div>
+
+
 
 
 

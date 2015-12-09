@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123141834) do
+ActiveRecord::Schema.define(version: 20151203145137) do
 
   create_table "banks", force: true do |t|
     t.string   "name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20151123141834) do
   add_index "loanrecoveries", ["loan_id"], name: "index_loanrecoveries_on_loan_id", using: :btree
 
   create_table "loans", force: true do |t|
+    t.string   "loan_id"
     t.string   "loan_type"
     t.integer  "interest_rate"
     t.datetime "created_at"
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151123141834) do
     t.integer  "rule_id"
     t.string   "loanname"
     t.string   "bankname"
+    t.string   "s_name"
   end
 
   add_index "loans", ["bank_id"], name: "index_loans_on_bank_id", using: :btree

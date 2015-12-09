@@ -4,10 +4,9 @@ class Loanrecovery < ActiveRecord::Base
   has_many :bill
   has_one :recovered
   belongs_to :loan
-  validates :phone, :length => { :is => 10 }
   validates_format_of :email, :with =>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i   
   validates :name,:phone,:address,:status,:bankname,:loanname, presence: true, allow_blank: false
-
+	validates :phone_number, format: { with: /\d{10}/, message: "bPhone no. should contain 10 digits" }
 
 def self.import(file)
   allowed_attributes = ["name","phone","address","email","status"]

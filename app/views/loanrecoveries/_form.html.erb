@@ -40,7 +40,7 @@
    <tr align="right">
     <div class="field">
      <td align="right"> <h4><%= f.label :status %></h4></td>
-     <td align="right" style="padding-left:30px"> <%= f.text_field :status, size: "70x15", class: "form-control input-lg", placeholder: "Status"%></td>
+     <td align="left" style="padding-left:30px"> <%= f.radio_button :status, '1' %> 1<br /><%= f.radio_button :status, '0' %> 0<br /</td>
     </div></tr>
    <tr><td><br></td></tr>
    <tr align="right">
@@ -67,7 +67,7 @@
    <tr align="right">
     <div class="field">
      <td align="right"> <h4><%= p.label :dateofpayment %></h4></td>
-     <td align="right" style="padding-left:30px"> <%= p.date_select :dateofpayment%></td>
+     <td align="left" style="padding-left:30px"> <%= p.text_field :dateofpayment,id:"datepicker"%></td>
     </div>
    </tr>
   </table>
